@@ -1,0 +1,26 @@
+﻿<Window x:Class="Sem_DesignPatterns.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="400" Width="600">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="Load from file..." Click="OnLoadFromFileClick"/>
+                    <MenuItem Header="Save to file..." Click="OnSaveToFileClick"/>
+                    <MenuItem Header="Exit" Click="OnExitClick"/>
+                </MenuItem>
+            </Menu>
+
+            <ContentControl Name="DynamicMenuContent" DockPanel.Dock="Top" />
+        </StackPanel>
+
+        <DataGrid x:Name="DynamicGrid" 
+                  AutoGenerateColumns="True" 
+                  ItemsSource="{Binding Items}" 
+                  Margin="10" 
+                  CanUserAddRows="False" 
+                  CanUserDeleteRows="False">
+        </DataGrid>
+    </DockPanel>
+</Window>
